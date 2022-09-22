@@ -20,13 +20,15 @@ for rnd in range(3):
         print()
     if rnd == 2:
         continue
-    winner_round = max(teams.values())
-    print(f'По итогу раунда лидирует команда со счетом {winner_round}')
+    winner_round = max(teams, key=lambda team: teams[team])
+    winner_score_round = max(teams.values())
+    print(f'По итогу раунда лидирует команда {winner_round} со счетом {winner_score_round}')
     print()
 else:
-    winner = max(teams.values())
+    winner = max(teams, key=lambda team: teams[team])
+    winner_score = max(teams.values())
     print('Игра окончена!')
-    print('Победила команда со счетом', winner)
+    print('Победила команда,', winner, 'со счетом', winner_score)
     print('Поздравляем победителей лавровым венком!')
 
     #TODO
